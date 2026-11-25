@@ -79,7 +79,7 @@
 <text class="attr" x="24" y="239">endereco</text>
 </g>
 <!-- Contrato -->
-<g transform="translate(1490 850)">
+<g transform="translate(800 1000)">
 <rect class="entity" width="420" height="360"/>
 <path class="header" d="M108 0 H402 Q420 0 420 18 V62 H0 V18 Q0 0 18 0 Z"/>
 <text class="htext" x="24" y="40">CONTRATO</text>
