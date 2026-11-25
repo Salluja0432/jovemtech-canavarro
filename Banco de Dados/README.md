@@ -54,15 +54,19 @@ Os arquivos `04_update_complementar.sql` e `05_consultas_verificacao.sql` são c
 
 A entidade original `Cliente` foi nomeada `paciente` na implementação. O atributo `data_hora` foi separado em `data_consulta` (`DATE`) e `hora_consulta` (`TIME`). O atributo `motivo`, que aparece no diagrama original, foi acrescentado à tabela `consulta` usando `ALTER TABLE`. O relacionamento N:N entre médico e especialidade é implementado por `medico_especialidade`. A relação 1:N `trabalha_em` entre clínica e médico foi detalhada na tabela `contrato`.
 
+## Modelo público e exportação do BRModelo
+
+- **BRModelo Web — modelo público da squad:** https://app.brmodeloweb.com/publicview/6b06d4ef1448006b56801a47
+
+O código SQL exportado pelo BRModelo foi usado como referência para a modelagem, mas não é o script de criação executável da entrega. A exportação apresenta problemas como múltiplas declarações de chave primária por tabela, vírgulas finais, tipos `INT` aplicados a atributos textuais, datas e valores, além de não representar separadamente as tabelas `especialidade` e `medico_especialidade`. Por isso, a implementação relacional foi ajustada e normalizada no script `Tabelas/01_criacao_tabelas.sql`, com suas chaves e constraints, e está refletida no Supabase.
+
 ## Links
 
 - **Supabase — painel do projeto:** https://supabase.com/dashboard/project/dbdmaapvokjiewsniruq
 - **Supabase — URL pública do projeto/API:** https://dbdmaapvokjiewsniruq.supabase.co
-- **BRModelo Web — ferramenta:** https://www.brmodeloweb.com/
+- **BRModelo Web — modelo público:** https://app.brmodeloweb.com/publicview/6b06d4ef1448006b56801a47
 
 O painel Supabase exige autenticação e permissão no projeto. O endpoint público não significa que as tabelas estejam abertas para leitura anônima: as tabelas permanecem protegidas por RLS.
-
-O endereço do BRModelo acima é o da ferramenta, não uma URL individual de compartilhamento do diagrama. O print original exportado foi anexado nesta pasta. Para fornecer o link público individual exigido, o proprietário do modelo precisa gerar a URL de compartilhamento no BRModelo Web e substituir o endereço acima pelo link específico.
 
 ## Conteúdo do Módulo 4 aplicado
 
